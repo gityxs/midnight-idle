@@ -1,0 +1,95 @@
+html, body {max-width: 100%; overflow-x: hidden;}
+body {padding:0; background-color:black; color:white; text-align:center; font-family:Arial; font-size:16px;}
+div.gframe {width:100%; max-width:600px; margin:auto; border:0px solid red;}
+
+.noselect {-webkit-user-select:none; -ms-user-select:none; user-select:none;}
+.hand {cursor:pointer;}
+
+div.p5 {padding:5px;}
+div.p10 {padding:10px;}
+div.center {text-align:center !important;}
+
+.clr-0 {color:#999 !important;}
+/* skill,cost,bar						darker,muted							bar												bgbar */
+.clr-k11a {color:#e33 !important;}		.clr-k11b {color:#b33 !important;}		.clr-k11c {background-color:#e33 !important;}	.clr-k11d {background-color:#600 !important;}
+.clr-k12a {color:#39f !important;}		.clr-k12b {color:#33b !important;}		.clr-k12c {background-color:#39f !important;}	.clr-k12d {background-color:#006 !important;}
+.clr-k15a {color:#008C00 !important;}	.clr-k15b {color:#2F005E !important;}													.clr-k15d {background-color:#004000 !important;}
+
+.clr-xp {background-color:#5d5d07 !important;}
+/*
+.clr-k12 {color:#99f !important;}	.bgclr-k12 {background-color:#33f !important;}
+.clr-k13 {color:#0c0 !important;}	.bgclr-k13 {background-color:#090 !important;}
+.clr-k14 {color:#cc0 !important;}	.bgclr-k14 {background-color:#990 !important;}
+.clr-k15 {color:#3cc !important;}	.bgclr-k15 {background-color:#0ff !important;}
+*/
+div.gnoverlay {position:fixed; top:0; left:0; width:100%; height:100%; z-index:1; background-color:black; opacity:0.9;}
+div.gnotice {width:100%; max-width:600px; margin:auto; border:0px solid red; background-color:#000; height:100%; z-index:2; top:0; bottom:0; position:absolute;}
+div.gnpanel {margin-top:10%; padding:20px;}
+div.gntitle {color:red; padding-bottom:10px; font-size:150%;}
+div.gntext {color:#ccc; line-height:150%; overflow-y:auto !important;}
+img.visual {width:100%;}
+input.gbtn {margin-top:20px; padding:10px 20px 10px; cursor:pointer; color:white; background-color:black; border:1px solid white;}
+
+div.ginfo {width:auto; border:1px solid #666; margin:3px; margin-bottom:10px; font-size:75%;}
+div.ginfbar {border:0px solid #fff; color:#ccc; border:1px solid #000; padding:1px; position:relative;}
+div.gsbox {border:0px solid red; display: inline-block; margin:	2px 10px 2px 10px;}
+div.gmenu {border:1px solid #666; margin:3px; display: inline-block; margin-top:5px; margin-bottom:10px; cursor:pointer;}
+div.gmenu.stab {padding:10px 20px 10px 20px !important;}
+div.gmenu.active {border:1px solid white;}
+div.gmenu.stactive {border:1px solid white; background-color:#004000 !important;}
+div.gmain {border:0px solid #666; margin:3px; width:auto; position:relative;}
+
+div.gubox {}
+div.gupanel {border:1px solid #333; margin-bottom:15px; position:relative;}
+div.gupanel.afford {border:1px solid #fff !important;}
+/*div.gupanel.affordx {border:1px solid #f1cc81 !important;}*/
+
+div.gubar {height:4px; width:100%; background-color:#333;}
+div.gubgbar {position:absolute; height:100%; z-index:-1;}
+div.gubgbar.enemy {background-color:black !important;}
+div.gubgbar.room {background-color:#330 !important;}
+div.guxp {height:100%; width:0; background-color:#ccc;}
+div.guxp.enemy {background-color:#000 !important;}
+div.guxp.room {background-color:#cc0 !important;}
+div.gubar.enemy {background-color:#f00;}
+div.guxp.timer {background-color:#000 !important; margin-bottom:4px;}
+div.gubar.timer {background-color:#cc0; margin-bottom:4px;}
+div.gutype {font-size:100%; color:#fff;}
+div.gutitle {color:white; text-align:left;}
+span.guauto {color:#fff; font-size:80%;}
+div.gubox.maxed .gutitle {color:#333 !important; font-size:80%;}
+div.gubox.maxed .gupanel {border:1px solid #222 !important;}
+div.gubox.maxed .gutext {font-size:70%;}
+div.gubox.maxed .gucbar {display:none;}
+div.gubox.gold .gupanel {border:2px solid #ff0 !important;}
+div.gubox.gold .gutitle {color:#990 !important;}
+div.gubox.room .gupanel {border:2px solid #960 !important;}
+div.gubox.room .gupanel.affordx {border:2px solid #f1cc81 !important;}
+div.gubox.enemy .gupanel {border:4px solid #900 !important; padding:20px;;}
+
+div.gubox.enemy .gutitle {color:white !important; text-align:left;}
+div.gulvls {float:right; font-size:76%;}
+div.gulvls.enemy {font-size:120%;}
+div.gulvls.gudice {color:#fff; font-size:80%;}
+div.gulvls.gudice.atkmiss {color:#c00;}
+div.gulvls.gudice img {max-width:20px;}
+div.gutext {color:#afafaf; text-align:left; line-height:100%; font-size:80%; padding-top:0px;}
+div.gutext.maxed {color:#666;}
+div.gucbar {text-align:left;}
+div.gucbar img {width:16px; height:16px;}
+div.guenemy img {width:30px; height:30px; float:left; padding:10px;}
+span.gutime {color:#fff; text-align:left; font-size:70%;}
+span.gucost {color:#fff; text-align:left; font-size:70%;}
+img.icox {bottom:0; right:0; cursor:pointer; margin:5px; width:20px; height:20px;}
+
+div.bhide {display:none !important;}
+span.bonus {color:#3c3;}
+.bigger {font-size:150%;}
+.smaller {font-size:80%;}
+.red {color:red !important;}
+.b {font-weight:bold;}
+.ttt {color: #73FF73 !important; font-weight:bold;}
+.ttlvl {float:right; font-size:120%;}
+.tttcost {font-size:80% !important; color:#008C00 !important; font-weight:bold;}
+.w20 {width:20px !important; height:20px !important;}
+.ttbuy {position:absolute; top:0; width:100%; height:100%; border:1px solid white; margin:0px; margin-left:-10px; padding:0px; background-color:#000; opacity:0.8}

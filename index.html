@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" onclick="first_tap();">
+<head>
+	<title>Midnight Idle - Minimalist Incremental Game</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+	<meta name="description" content="Midnight Idle, a Minimalist Incremental Game">
+	<meta name="author" content="Wong Yat Seng">
+	<link rel="stylesheet" href="style.css?v=2">
+	<script src="config.js?v=3"></script>
+	<script src="script.js?v=2"></script>
+</head>
+<body>
+	<script src="chs.js"></script>
+	<script src="core.js"></script>
+<div class="gframe">
+	<div id="ginfo" class="ginfo p5" style="display:none;"></div>
+	<div id="gworld" style="display:none;"></div>
+	<div id="gtab" style="display:none;"></div>
+	<div id="gbat" style="display:none;"></div>
+	<div id="gmain" class="gmain"></div>
+	<div id="gnotice" class="gnotice" style="display:none;">
+		<div class="gnpanel">
+			<div id="gntitle" class="gntitle"></div>
+			<div id="gntext" class="gntext"></div>
+			<br><img id="visual" class="visual" src="">
+			<br><input type="button" id="gnbtn" class="gbtn" value="Close" onclick="close_notice();">
+			<br>&nbsp;
+		</div>
+	</div>
+	<div id="gnoverlay" class="gnoverlay" style="display:none;"></div>
+	<div id="gmisc" class="gnotice" style="display:none;">
+		<div class="gnpanel" style="margin-top:5%;">
+			<div class="gntitle">Midnight Idle</div>
+			<div class="gntext">
+				A minimalist incremental game with a captivating backstory, offering rich layers of experience for you to explore on your adventure. I created this game out of my passion for the genre, inspired by titles like Armory & Machine, Antimatter Dimensions, A Dark Room, Universal Paperclips, and many others.
+				<br><br>If you’ve enjoyed the game and want to support its continued development—and future projects—please consider buying me a coffee. Your support makes all the difference!
+				<br><br><a href="https://buymeacoffee.com/yatseng" target="_blank"><img src="img/coffee.png"></a>
+				<br><br><input type="button"class="gbtn" value="Close" onclick="hide('gmisc'); hide('gnoverlay');">
+			</div>
+		</div>
+	</div>
+	<div id="gmisc2" class="gnotice" style="display:none;">
+		<div class="gnpanel" style="margin-top:5%;">
+			<div class="gntitle">Game Stats</div>
+			<div class="gntext">
+				Game Time: <span id="tick">0</span>
+				<br>Current Stage: <span id="stage">0</span>
+				<br><br>Volume:
+				<br><input id="svolume" type="range" min="0" max="100" value="75" oninput="do_volume(this.value);">
+				<br><br>Game data:
+				<input type="button"class="gbtn" value="Export" onclick="exportgame();">
+				<input type="button"class="gbtn" value="Import" onclick="importgame();">
+				<br><span id="imexinfo" style="color:#cfc"></span>
+				<br><input type="button" class="gbtn" value="Reset Game" onclick="if (confirm('This will permanently reset your game progress. Confirm?')){resetgame();hide('gmisc2');}" style="background-color:darkred;">
+				<br><input type="button"class="gbtn" value="Close" onclick="hide('gmisc2'); hide('gnoverlay'); gebi('imexinfo').innerHTML='';">
+				<br><br>Credits:
+				<br>Music: <a style="color:#c66;" href="https://pixabay.com/">pixabay.com</a>
+				<br>Icons: <a style="color:#c66;" href="https://uxwing.com/" target="_blank">uxwing.com</a>
+				<br>Images: <a style="color:#c66;" href="https://www.bing.com/images/create/" target="_blank">Bing Image Creator</a>
+			</div>
+		</div>
+	</div>
+	<div id="gmisc3" class="gnotice" style="display:none;">
+		<div class="gnpanel" style="margin-top:5%;">
+			<div class="gntitle">Story</div>
+			<div class="gntext">
+				<br><input type="button"class="gbtn" value="Close" onclick="hide('gmisc3'); hide('gnoverlay');"><br><br>
+				<span id="gnstory">.. No Story ..</span>
+				<br><input type="button"class="gbtn" value="Close" onclick="hide('gmisc3'); hide('gnoverlay');">
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<div id="footer" style="display:none;">
+		<img class="icox" src="img/ico-y.png" onclick="show('gmisc'); window.scrollTo(0,0); show('gnoverlay');">
+		<img class="icox" src="img/ico-x2.png" onclick="show('gmisc2'); window.scrollTo(0,0); show('gnoverlay');">
+		<img class="icox" src="img/ico-z.png" onclick="load_story(); window.scrollTo(0,0); show('gmisc3'); show('gnoverlay');">
+		<img id="imute" class="icox" src="img/ico-v1.png" onclick="toggle_volume();">
+		<br><br><span class="noselect" style="color:#666; font-size:70%;">Midnight Idle v0.2.0 - by Wong Yat Seng</span>
+	</div>
+</div>
+<br>
+<span id="spndebug"></span>
+<script>window.addEventListener('load',function(){startgame();})</script>
+<!--客服 开始-->
+<script src="//g8hh.github.io/static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="//g8hh.github.io/static/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="//g8hh.github.io/static/js/kf.js"></script>
+<!-- 客服 结束 -->
+<!--站长统计-->
+    <div style="display: none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?828597e93cee632465679b7ef35edfd5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>    </div>
+</body>
+</html>
