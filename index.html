@@ -26,7 +26,7 @@
 			<div id="gntitle" class="gntitle"></div>
 			<div id="gntext" class="gntext"></div>
 			<br><img id="visual" class="visual" src="">
-			<br><input type="button" id="gnbtn" class="gbtn" value="Close" onclick="close_notice();">
+			<br><input type="button" id="gnbtn" class="gbtn" value="关闭" onclick="close_notice();">
 			<br>&nbsp;
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 				A minimalist incremental game with a captivating backstory, offering rich layers of experience for you to explore on your adventure. I created this game out of my passion for the genre, inspired by titles like Armory & Machine, Antimatter Dimensions, A Dark Room, Universal Paperclips, and many others.
 				<br><br>If you’ve enjoyed the game and want to support its continued development—and future projects—please consider buying me a coffee. Your support makes all the difference!
 				<br><br><a href="https://buymeacoffee.com/yatseng" target="_blank"><img src="img/coffee.png"></a>
-				<br><br><input type="button"class="gbtn" value="Close" onclick="hide('gmisc'); hide('gnoverlay');">
+				<br><br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc'); hide('gnoverlay');">
 			</div>
 		</div>
 	</div>
@@ -51,14 +51,14 @@
 				<br><br>Volume:
 				<br><input id="svolume" type="range" min="0" max="100" value="75" oninput="do_volume(this.value);">
 				<br><br>Game data:
-				<input type="button"class="gbtn" value="Export" onclick="exportgame();">
-				<input type="button"class="gbtn" value="Import" onclick="importgame();">
+				<input type="button"class="gbtn" value="导出" onclick="exportgame();">
+				<input type="button"class="gbtn" value="导入" onclick="importgame();">
 				<br><span id="imexinfo" style="color:#cfc"></span>
-				<br><input type="button" class="gbtn" value="Reset Game" onclick="if (confirm('This will permanently reset your game progress. Confirm?')){resetgame();hide('gmisc2');}" style="background-color:darkred;">
-				<div id="divcycle" style="display:none"><input type="button" class="gbtn" value="Reset Cycle" onclick="if (confirm('This will reset your game progress, but keep SP and unlocked prestige rewards. Confirm?')){resetcycle();hide('gmisc2');}" style="background-color:darkblue;">
+				<br><input type="button" class="gbtn" value="重置游戏" onclick="if (confirm('This will permanently reset your game progress. Confirm?')){resetgame();hide('gmisc2');}" style="background-color:darkred;">
+				<div id="divcycle" style="display:none"><input type="button" class="gbtn" value="重置本轮" onclick="if (confirm('This will reset your game progress, but keep SP and unlocked prestige rewards. Confirm?')){resetcycle();hide('gmisc2');}" style="background-color:darkblue;">
 					<br><br>Stuck?<br>You can reset your current cycle progress only.<br>Please report/feedback your bug: <a href="https://www.reddit.com/r/incremental_games/comments/1hanng2/requesting_for_feedback_midnight_idle_020_with/" target="_blank" style="color:Red;">Reddit</a>
 				</div>
-				<br><input type="button"class="gbtn" value="Close" onclick="hide('gmisc2'); hide('gnoverlay'); gebi('imexinfo').innerHTML='';">
+				<br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc2'); hide('gnoverlay'); gebi('imexinfo').innerHTML='';">
 				<br><br>Credits:
 				<br>Music: <a style="color:#c66;" href="https://pixabay.com/">pixabay.com</a>
 				<br>Icons: <a style="color:#c66;" href="https://uxwing.com/" target="_blank">uxwing.com</a>
@@ -70,9 +70,9 @@
 		<div class="gnpanel" style="margin-top:5%;">
 			<div class="gntitle">Story</div>
 			<div class="gntext">
-				<br><input type="button"class="gbtn" value="Close" onclick="hide('gmisc3'); hide('gnoverlay');"><br><br>
+				<br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc3'); hide('gnoverlay');"><br><br>
 				<span id="gnstory">.. No Story ..</span>
-				<br><input type="button" class="gbtn" value="Close" onclick="hide('gmisc3'); hide('gnoverlay');">
+				<br><input type="button" class="gbtn" value="关闭" onclick="hide('gmisc3'); hide('gnoverlay');">
 			</div>
 		</div>
 	</div>
