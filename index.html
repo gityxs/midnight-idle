@@ -55,7 +55,7 @@
 				<input type="button"class="gbtn" value="导入" onclick="importgame();">
 				<br><span id="imexinfo" style="color:#cfc"></span>
 				<br><input type="button" class="gbtn" value="重置游戏" onclick="if (confirm('This will permanently reset your game progress. Confirm?')){resetgame();hide('gmisc2');}" style="background-color:darkred;">
-				<div id="divcycle" style="display:none"><input type="button" class="gbtn" value="重置本轮" onclick="if (confirm('This will reset your game progress, but keep SP and unlocked prestige rewards. Confirm?')){resetcycle();hide('gmisc2');}" style="background-color:darkblue;">
+				<div id="divcycle" style="display:none"><input type="button" class="gbtn" value="重置本轮" onclick="if (confirm('这将重置你的游戏进程，但保留灵魂点和已经解锁的声望奖励。确认重置吗?')){resetcycle();hide('gmisc2');}" style="background-color:darkblue;">
 					<br><br>Stuck?<br>You can reset your current cycle progress only.<br>Please report/feedback your bug: <a href="https://www.reddit.com/r/incremental_games/comments/1hanng2/requesting_for_feedback_midnight_idle_020_with/" target="_blank" style="color:Red;">Reddit</a>
 				</div>
 				<br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc2'); hide('gnoverlay'); gebi('imexinfo').innerHTML='';">
