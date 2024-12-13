@@ -1,5 +1,5 @@
-var game_version = "0.2.0",
-  save_interval = 10,
+var game_version = "0.2.3",
+  save_interval = 1,
   d = null,
   story = {
     s0: {
@@ -135,7 +135,7 @@ var game_version = "0.2.0",
     s22: {
       img: null,
       title: "CUNNING",
-      text: "In your goblin form, black ooze dripping ominously from your body, you hastily explain to the goblin patrol that you fell into a tar pit. They eye you warily for a moment, but your story seems plausible enough. Convinced, they step aside, allowing you to pass unhindered.",
+      text: "In your goblin form, black ooze dripping ominously from your body, you hastily explain to the goblin patrol that you fell into a tar pit. They eye you warily for a moment, but your story seems plausible enough. Convinced, they step aside, allowing you to pass unhindered.<br><br>+25 XP",
     },
     s23: {
       img: "s23.jpg",
@@ -150,12 +150,12 @@ var game_version = "0.2.0",
     s25: {
       img: "s25.jpg",
       title: "STEALTHY",
-      text: "You move quietly through the mess hall, your disgusting black ooze dripping and leaving a trail on the floor behind you. To your surprise, none of the goblins seem to notice or care. With careful steps, you make your way toward the exit, grateful for the unexpected lack of attention.",
+      text: "You move quietly through the mess hall, your disgusting black ooze dripping and leaving a trail on the floor behind you. To your surprise, none of the goblins seem to notice or care. With careful steps, you make your way toward the exit, grateful for the unexpected lack of attention.<br><br>+25 XP",
     },
     s26: {
       img: "s26.jpg",
       title: "AVIATION PROWESS",
-      text: "With effortless speed, you soar past the goblins, your black ooze dripping onto their food and ale, leaving a trail of disgust in your wake. Surprisingly, none of them seem to notice or care. Without hesitation, you continue toward the exit, eager to leave the mess hall behind.",
+      text: "With effortless speed, you soar past the goblins, your black ooze dripping onto their food and ale, leaving a trail of disgust in your wake. Surprisingly, none of them seem to notice or care. Without hesitation, you continue toward the exit, eager to leave the mess hall behind.<br><br>+25 XP",
     },
     s27: {
       img: "s27.jpg",
@@ -175,7 +175,7 @@ var game_version = "0.2.0",
     s30: {
       img: "s30.jpg",
       title: "VALUABLE ITEMS",
-      text: "On the table lie three intriguing items: a gleaming magic dagger, a tattered map that seems to hint at hidden secrets, and a vial filled with vibrant red liquid. The vial catches your eye—it could be exotic blood, promising power and sustenance, or it might conceal a deadly poison. The choice to take it is as tempting as it is risky.",
+      text: "On the table lie three intriguing items: a gleaming magic dagger, a tattered map that seems to hint at hidden secrets, and a vial filled with vibrant red liquid. The vial catches your eye—it could be exotic blood, promising power and sustenance, or it might conceal a deadly poison. The choice to take it is as tempting as it is risky<br><br>Note: Bats are unable to wield any weapons.",
     },
     s31: {
       img: "s31.jpg",
@@ -236,6 +236,11 @@ var game_version = "0.2.0",
       img: null,
       title: "VICTORY",
       text: "Exhausted from the long and grueling battle, you take a moment to rest and regain your strength. Once you’ve caught your breath, you press onward, ready to continue your journey.",
+    },
+    s42a: {
+      img: null,
+      title: "MERCY",
+      text: "You drop to your knees, pleading for mercy. The elite orc glares at you, his expression a mix of disdain and amusement. With a low grunt, he raises his massive axe and strikes you on the head with its blunt side. Darkness swiftly overtakes you.<br><br>When you awaken, you find yourself discarded in the corner of the room like a broken toy, bruised but miraculously still alive. A sharp, pounding headache clouds your thoughts, but survival instinct fuels your resolve. Gritting your teeth against the pain, you stagger to your feet and prepare to continue your journey.<br><br>You lose XP.",
     },
     s43: {
       img: "s43.jpg",
@@ -340,17 +345,17 @@ var game_version = "0.2.0",
     s63: {
       img: "s63.jpg",
       title: "AMULET OF SWIFTNESS",
-      text: "From the fallen troll, you retrieve a gleaming amulet radiating intense energy and power. As you place it around your neck, a surge of vitality courses through you. The amulet's enchantment enhances your agility, making you feel lighter on your feet and capable of moving with remarkable speed.<br><br>Exploration gain (+10)<br><br> You resume your journey.",
+      text: "From the fallen troll, you retrieve a gleaming amulet radiating intense energy and power. As you place it around your neck, a surge of vitality courses through you. The amulet's enchantment enhances your agility, making you feel lighter on your feet and capable of moving with remarkable speed.<br><br>Slash attacks are now faster (-0.5s)<br><br> You resume your journey.",
     },
     s64: {
       img: null,
       title: "PERFECT LIE",
-      text: "As a cunning goblin, you approach the cave troll with confidence, claiming that the master has sent you to ensure he isn’t shirking his duties. Noting that he is clearly alert and diligent, you casually add that you’ll report his excellent performance to the boss. The troll, flattered by your words, grunts in approval and allows you to pass without any trouble<br><br>+25 XP.",
+      text: "As a cunning goblin, you approach the cave troll with confidence, claiming that the master has sent you to ensure he isn’t shirking his duties. Noting that he is clearly alert and diligent, you casually add that you’ll report his excellent performance to the boss. The troll, flattered by your words, grunts in approval and allows you to pass without any trouble.<br><br>+25 XP",
     },
     s65: {
       img: null,
       title: "QUICK SPRINT",
-      text: "Summoning all your strength and speed, you dash toward the troll with a sudden burst of agility. In a daring move, you slide beneath him, slipping right between his massive legs. Though unnaturally swift, the troll is caught off guard by your unexpected maneuver. By the time he regains his composure, you’ve already vanished into the shadows, far beyond his reach.",
+      text: "Summoning all your strength and speed, you dash toward the troll with a sudden burst of agility. In a daring move, you slide beneath him, slipping right between his massive legs. Though unnaturally swift, the troll is caught off guard by your unexpected maneuver. By the time he regains his composure, you’ve already vanished into the shadows, far beyond his reach.<br><br>+25 XP",
     },
     s66: {
       img: "s66.jpg",
@@ -375,7 +380,7 @@ var game_version = "0.2.0",
     s70: {
       img: "s70.jpg",
       title: "ARROW SHOWER",
-      text: "Flying proved to be a grave mistake. The moment you soared into the open sky, black-hooded archers atop the fortress parapets spotted you and unleashed a volley of arrows. Acting swiftly, you dive sharply, narrowly avoiding their deadly aim, and slip through a nearby open window to safety.",
+      text: "Flying proved to be a grave mistake. The moment you soared into the open sky, black-hooded archers atop the fortress parapets spotted you and unleashed a volley of arrows. Acting swiftly, you dive sharply, narrowly avoiding their deadly aim, and slip through a nearby open window to safety.<br><br>+25 XP",
     },
     s71: {
       img: "s71.jpg",
@@ -525,7 +530,7 @@ var game_version = "0.2.0",
     s100: {
       img: null,
       title: "FREEDOM",
-      text: "You have vanquished Legion, the demonic entity, and at long last, the chains binding you to his will are broken. Yet, as the oppressive weight lifts, a hollow emptiness settles within. The fire that once fueled your purpose flickers and fades, leaving behind an unsettling void. What lies ahead remains uncertain—a mystery shrouded in the passage of time.<br><br>For now, you pause, taking a moment to savor the fragile taste of newfound freedom, unsure of what this uncharted future will hold.<br><br>+10000 SP<br><br><i>Dev Note:<br>Please support for more content!</i>",
+      text: "You have vanquished Legion, the demonic entity, and at long last, the chains binding you to his will are broken. Yet, as the oppressive weight lifts, a hollow emptiness settles within. The fire that once fueled your purpose flickers and fades, leaving behind an unsettling void. What lies ahead remains uncertain—a mystery shrouded in the passage of time.<br><br>For now, you pause, taking a moment to savor the fragile taste of newfound freedom, unsure of what this uncharted future will hold.<br><br><i>Dev Note:<br>Please support for more content!</i>",
     },
     n0: {
       img: null,
@@ -723,7 +728,16 @@ var game_version = "0.2.0",
       nolimit: 1,
     },
     k1140: { title: "Fight Rat Army", text: "Engage battle.", room: 1 },
-    k11401: { title: "Look for Rats", text: "Engage battle.", room: 1 },
+    k11401: {
+      title: "Look for Rats",
+      text: "Engage battle (Optional encounter).",
+      room: 1,
+    },
+    k114011: {
+      title: "Animal Planet: Rats",
+      text: "Gotta catch em all!",
+      room: 1,
+    },
     k11410: { title: "Fight Spectral Bat", text: "Engage battle.", room: 1 },
     k11411: { title: "Fight Spectral Wolf", text: "Engage battle.", room: 1 },
     k11412: { title: "Explore Left Path", text: "Grunting noise.", room: 1 },
@@ -775,8 +789,8 @@ var game_version = "0.2.0",
       text: "Gap is big enough to squeeze through.",
       room: 1,
     },
-    k11512: { title: "Goblin: Lockpick", text: "Pick the gate lock.", room: 1 },
-    k11513: { title: "Leave", text: "Continue on your journey.", room: 1 },
+    k11512: { title: "Goblin: Picklock", text: "Pick the gate lock.", room: 1 },
+    k11513: { title: "Leave", text: "You attempt to flee.", room: 1 },
     k115111: {
       title: "Study Table",
       text: "Examine the study table.",
@@ -796,7 +810,11 @@ var game_version = "0.2.0",
       room: 1,
     },
     k11520: { title: "Training Room", text: "Enter training room.", room: 1 },
-    k11521: { title: "Leave", text: "Continue on your journey.", room: 1 },
+    k11521: {
+      title: "Leave Training",
+      text: "Continue on your journey.",
+      room: 1,
+    },
     k115221: {
       title: "Brawn over Brains",
       text: "Lose max sanity (-4). Increase physical damage(+1).",
@@ -840,7 +858,21 @@ var game_version = "0.2.0",
     },
     k115271: { title: "Fight Goblin Horde", text: "Engage battle.", room: 1 },
     k115272: { title: "Fight Elite Orc", text: "Engage battle.", room: 1 },
-    k11600: { title: "Fight Bats", text: "Engage battle.", room: 1 },
+    k115273: {
+      title: "Beg for Mercy",
+      text: "Give up and surrender.",
+      room: 1,
+    },
+    k11600: {
+      title: "Fight Bats",
+      text: "Engage battle (Optional encounter).",
+      room: 1,
+    },
+    k116001: {
+      title: "Animal Planet: Bats",
+      text: "Gotta catch em all!",
+      room: 1,
+    },
     k11601: {
       title: "Bat: Improve Navigation",
       text: "Additional exploration progress (+20s).",
@@ -932,7 +964,7 @@ var game_version = "0.2.0",
     k11640: { title: "Fight Cave Troll", text: "Engage battle.", room: 1 },
     k11641: { title: "Goblin: Lie", text: "Make a bluff.", room: 1 },
     k11642: {
-      title: "Wolf: Sprint",
+      title: "Wolf: Sprint Under",
       text: "Sprint under between the legs.",
       room: 1,
     },
@@ -975,6 +1007,11 @@ var game_version = "0.2.0",
       room: 1,
     },
     k11718: { title: "Attack Dark Imp", text: "Engage battle.", room: 1 },
+    k117181: {
+      title: "Animal Planet: Imps",
+      text: "Gotta catch em all!",
+      room: 1,
+    },
     k11719: {
       title: "Explore Living Quarters",
       text: "Go to living quarters.",
@@ -1025,7 +1062,7 @@ var game_version = "0.2.0",
     k1194: { title: "Defiance", text: "Disobey command.", room: 1 },
     e111: { title: "Goblin", text: "Lv.2 Goblin Guard (5 xp)", enemy: 1 },
     e112: { title: "Rat Army", text: "Lv.2 Swarm of Rats (9 xp)", enemy: 1 },
-    e113: { title: "Rat", text: "Lv.1 Lonely Rat (1 xp)", enemy: 1 },
+    e113: { title: "Rat", text: "Lv.1 Lonely Rat (2 xp)", enemy: 1 },
     e114: {
       title: "Spectral Bat",
       text: "Lv.3 Magical Bat (14 xp)",
@@ -1168,6 +1205,7 @@ var game_version = "0.2.0",
       max: 1,
       cost: 3,
     },
+    t17: { title: "Overclock", text: "Sanity gain (+1)", max: 5, cost: 6 },
     t21: { title: "Metabolism", text: "Blood speed (+0.2)", max: 30, cost: 1 },
     t22: {
       title: "Armor Cracking",
@@ -1177,9 +1215,9 @@ var game_version = "0.2.0",
     },
     t23: {
       title: "Rupture",
-      text: "All physical damage (+0.25)",
+      text: "All physical damage (+0.5)",
       max: 20,
-      cost: 2,
+      cost: 4,
     },
     t24: { title: "Hasty", text: "Sprinting gain (+1)", max: 20, cost: 1 },
     t25: {
@@ -1194,25 +1232,21 @@ var game_version = "0.2.0",
       max: 1,
       cost: 5,
     },
+    t27: { title: "Insatiable", text: "Blood gain (+1)", max: 5, cost: 6 },
     t31: {
       title: "Marching",
       text: "Exploration speed (+0.25)",
       max: 40,
       cost: 1,
     },
-    t32: { title: "Bullseye", text: "Critial Chance (+1%)", max: 45, cost: 3 },
+    t32: { title: "Bullseye", text: "Critial Chance (+1%)", max: 45, cost: 2 },
     t33: {
       title: "Dagger Master",
       text: "All dagger damage (+0.25)",
       max: 40,
       cost: 1,
     },
-    t34: {
-      title: "Short Fuse",
-      text: "All bomb speed (+0.1)",
-      max: 20,
-      cost: 1,
-    },
+    t34: { title: "Accuracy", text: "Attack accuracy (+1%)", max: 25, cost: 1 },
     t35: {
       title: "Cartographer",
       text: "Shortcut/Map gain (+1)",
@@ -1239,6 +1273,18 @@ var game_version = "0.2.0",
       max: 28,
       cost: 2,
     },
+    t46: {
+      title: "Viscosity",
+      text: "Adventure time cost (-1s), min 0.2s",
+      max: 10,
+      cost: 4,
+    },
+    t47: {
+      title: "Fluidity",
+      text: "Skill time cost (-1s), min 0.2s",
+      max: 10,
+      cost: 4,
+    },
     t51: {
       title: "Bookmarked",
       text: "Unlocked Freeflow/Clockwork",
@@ -1249,7 +1295,7 @@ var game_version = "0.2.0",
       title: "Waze",
       text: "Auto Sprint/Shortcut/Navigate",
       max: 1,
-      cost: 5,
+      cost: 4,
     },
     t53: { title: "Animal Planet", text: "Auto Rat/Bat/Imp", max: 1, cost: 10 },
     t54: { title: "Wikipedia", text: "Any XP gain (+1)", max: 100, cost: 1 },
@@ -2112,6 +2158,18 @@ function init_d(e = 0) {
           gain: 1,
           cost: null,
         },
+        k114011: {
+          unlock: 0,
+          value: 0,
+          max: 1,
+          auto: 0,
+          running: 0,
+          curr: 0,
+          need: 1,
+          speed: 1,
+          gain: 1,
+          cost: null,
+        },
         k11410: {
           unlock: 0,
           value: 0,
@@ -2343,7 +2401,7 @@ function init_d(e = 0) {
         k11512: {
           unlock: 0,
           value: 0,
-          max: 3,
+          max: 1,
           auto: 0,
           running: 0,
           curr: 0,
@@ -2580,6 +2638,18 @@ function init_d(e = 0) {
           gain: 1,
           cost: null,
         },
+        k115273: {
+          unlock: 0,
+          value: 0,
+          max: 1,
+          auto: 0,
+          running: 0,
+          curr: 0,
+          need: 1,
+          speed: 1,
+          gain: 1,
+          cost: null,
+        },
         k115272: {
           unlock: 0,
           value: 0,
@@ -2596,6 +2666,18 @@ function init_d(e = 0) {
           unlock: 0,
           value: 0,
           max: 20,
+          auto: 0,
+          running: 0,
+          curr: 0,
+          need: 1,
+          speed: 1,
+          gain: 1,
+          cost: null,
+        },
+        k116001: {
+          unlock: 0,
+          value: 0,
+          max: 1,
           auto: 0,
           running: 0,
           curr: 0,
@@ -3120,6 +3202,18 @@ function init_d(e = 0) {
           gain: 1,
           cost: null,
         },
+        k117181: {
+          unlock: 0,
+          value: 0,
+          max: 1,
+          auto: 0,
+          running: 0,
+          curr: 0,
+          need: 1,
+          speed: 1,
+          gain: 1,
+          cost: null,
+        },
         k11719: {
           unlock: 0,
           value: 0,
@@ -3336,54 +3430,6 @@ function init_d(e = 0) {
           gain: 1,
           cost: null,
         },
-        k1198: {
-          unlock: 0,
-          value: 0,
-          max: 1,
-          auto: 0,
-          running: 0,
-          curr: 0,
-          need: 1,
-          speed: 1,
-          gain: 1,
-          cost: null,
-        },
-        k1197: {
-          unlock: 0,
-          value: 0,
-          max: 1,
-          auto: 0,
-          running: 0,
-          curr: 0,
-          need: 1,
-          speed: 1,
-          gain: 1,
-          cost: null,
-        },
-        k1196: {
-          unlock: 0,
-          value: 0,
-          max: 1,
-          auto: 0,
-          running: 0,
-          curr: 0,
-          need: 1,
-          speed: 1,
-          gain: 1,
-          cost: null,
-        },
-        k1195: {
-          unlock: 0,
-          value: 0,
-          max: 1,
-          auto: 0,
-          running: 0,
-          curr: 0,
-          need: 1,
-          speed: 1,
-          gain: 1,
-          cost: null,
-        },
         k1194: {
           unlock: 0,
           value: 0,
@@ -3453,7 +3499,7 @@ function init_d(e = 0) {
           auto: 0,
           running: 0,
           curr: 0,
-          need: 31,
+          need: 24,
           speed: 0,
           gain: 0,
           cost: null,
@@ -3472,7 +3518,7 @@ function init_d(e = 0) {
           gain: 0,
           cost: null,
           enemy: 1,
-          xp: 1,
+          xp: 2,
         },
         e114: {
           unlock: 0,
@@ -3481,7 +3527,7 @@ function init_d(e = 0) {
           auto: 0,
           running: 0,
           curr: 0,
-          need: 32,
+          need: 28,
           speed: 0,
           gain: 0,
           cost: null,
@@ -3496,7 +3542,7 @@ function init_d(e = 0) {
           auto: 0,
           running: 0,
           curr: 0,
-          need: 36,
+          need: 32,
           speed: 0,
           gain: 0,
           cost: null,
@@ -4105,22 +4151,36 @@ function init_d(e = 0) {
           t14: 0,
           t15: 0,
           t16: 0,
+          t17: 0,
+          t18: 0,
+          t19: 0,
           t21: 0,
           t22: 0,
           t23: 0,
           t24: 0,
           t25: 0,
           t26: 0,
+          t27: 0,
+          t28: 0,
+          t29: 0,
           t31: 0,
           t32: 0,
           t33: 0,
           t34: 0,
           t35: 0,
+          t36: 0,
+          t37: 0,
+          t38: 0,
+          t39: 0,
           t41: 0,
           t42: 0,
           t43: 0,
           t44: 0,
           t45: 0,
+          t46: 0,
+          t47: 0,
+          t48: 0,
+          t49: 0,
           t51: 0,
           t52: 0,
           t53: 0,
@@ -4229,10 +4289,10 @@ function up_skill(e) {
       (d.skill.k1118.cost.k120 += 1)),
     "k1119" == e)
   ) {
-    var t = 3;
-    1 == d.skill.k11191.value && (t += 3),
-      d.game.tree.t24 > 0 && (t += d.game.tree.t24),
-      explore_go(e, t, "k1114");
+    var _ = 3;
+    1 == d.skill.k11191.value && (_ += 3),
+      d.game.tree.t24 > 0 && (_ += d.game.tree.t24),
+      explore_go(e, _, "k1114");
   }
   if (
     ("k1131" == e &&
@@ -4259,8 +4319,8 @@ function up_skill(e) {
       (lskill("k1136"), lskill("k1137"), (d.game.next_stage = 18)),
     "k1138" == e)
   ) {
-    var t = 5;
-    d.game.tree.t35 > 0 && (t += d.game.tree.t35), explore_go(e, t, "k1114");
+    var _ = 5;
+    d.game.tree.t35 > 0 && (_ += d.game.tree.t35), explore_go(e, _, "k1114");
   }
   if (
     ("k1139" == e && (uskill("k1114"), uskill("k1230")),
@@ -4314,12 +4374,19 @@ function up_skill(e) {
       (d.skill.k11181.cost.k120 += 1)),
     "k11381" == e)
   ) {
-    var t = 20;
-    d.game.tree.t35 > 0 && (t += d.game.tree.t35), explore_go(e, t, "k1114");
+    var _ = 20;
+    d.game.tree.t35 > 0 && (_ += d.game.tree.t35), explore_go(e, _, "k1114");
   }
   if (
     ("k1140" == e && (uskill("e112"), (d.skill.k1140.value = 0)),
-    "k11401" == e && uskill("e113"),
+    "k11401" == e &&
+      ((d.skill.k11600.curr = 0), (d.skill.k11600.running = 0), uskill("e113")),
+    "k114011" == e &&
+      (d.skill.k11401.value < d.skill.k11401.max &&
+        ((d.skill.k114011.value = 0), (d.skill.k114011.auto = 1)),
+      d.skill.k11401.value++,
+      add_xp(d.skill.e113.xp),
+      d.game.tree.t42 > 0 && (d.skill.k110.max += 0.5 * d.game.tree.t42)),
     "k11410" == e &&
       (show_notice(story.n2), uskill("e114"), (d.skill.k11410.value = 0)),
     "k11411" == e &&
@@ -4381,6 +4448,7 @@ function up_skill(e) {
       lskill("k114131"),
       lskill("k114132"),
       uskill("k11420"),
+      add_xp(25),
       add_story("s22"),
       show_notice(story.s22)),
     "k114133" == e &&
@@ -4390,14 +4458,18 @@ function up_skill(e) {
       (lskill("k114133"),
       lskill("k114134"),
       lskill("k114135"),
+      lskill("k114136"),
       uskill("k11420"),
+      add_xp(25),
       add_story("s25"),
       show_notice(story.s25)),
     "k114136" == e &&
       (lskill("k114133"),
       lskill("k114134"),
+      lskill("k114135"),
       lskill("k114136"),
       uskill("k11420"),
+      add_xp(25),
       add_story("s26"),
       show_notice(story.s26)),
     "k11510" == e &&
@@ -4411,6 +4483,7 @@ function up_skill(e) {
       (lskill("k11510"),
       lskill("k11511"),
       lskill("k11512"),
+      lskill("k11513"),
       add_story("s29"),
       show_notice(story.s29, 32)),
     "k11512" == e &&
@@ -4418,6 +4491,7 @@ function up_skill(e) {
       (lskill("k11510"),
       lskill("k11511"),
       lskill("k11512"),
+      lskill("k11513"),
       add_story("s29"),
       show_notice(story.s29, 32)),
     "k11513" == e &&
@@ -4426,12 +4500,16 @@ function up_skill(e) {
       lskill("k11512"),
       lskill("k115111"),
       lskill("k115112"),
+      lskill("k115113"),
+      lskill("k115114"),
+      lskill("k115115"),
       uskill("k1114"),
+      (d.skill.e1111.value = 0),
       add_story("s35"),
       show_notice(story.s35, 35)),
     "k115111" == e &&
       (lskill("k115112"),
-      0 == d.skill.k116.unlock && (uskill("k115113"), show_notice(story.n3)),
+      0 == d.skill.k116.unlock && uskill("k115113"),
       uskill("k115114"),
       uskill("k115115"),
       add_story("s30"),
@@ -4479,6 +4557,7 @@ function up_skill(e) {
       uskill("k115231"),
       uskill("k11524"),
       uskill("k11525"),
+      uskill("k11521"),
       1 == d.skill.k1136.unlock && uskill("k11526")),
     "k11521" == e &&
       (lskill("k11520"),
@@ -4525,7 +4604,23 @@ function up_skill(e) {
       ((d.skill.a111.auto = 1), (d.skill.a112.auto = 1), show_notice(story.n4)),
     "k115271" == e && uskill("e1112"),
     "k115272" == e && ((d.skill.k115272.value = 0), uskill("e1113")),
-    "k11600" == e && uskill("e1114"),
+    "k115273" == e &&
+      (lskill("k115272"),
+      lskill("k115273"),
+      uskill("k1114"),
+      (d.skill.xp.curr = 0),
+      add_story("s42a"),
+      show_notice(story.s42a, 40)),
+    "k11600" == e &&
+      ((d.skill.k11401.curr = 0),
+      (d.skill.k11401.running = 0),
+      uskill("e1114")),
+    "k116001" == e &&
+      (d.skill.k11600.value < d.skill.k11600.max &&
+        ((d.skill.k116001.value = 0), (d.skill.k116001.auto = 1)),
+      d.skill.k11600.value++,
+      add_xp(d.skill.e1114.xp),
+      d.game.tree.t42 > 0 && (d.skill.k120.max += 0.5 * d.game.tree.t42)),
     ("k11610" == e || "k11622" == e) &&
       (lskill("k11610"),
       lskill("k11611"),
@@ -4569,6 +4664,9 @@ function up_skill(e) {
     "k11615" == e &&
       (lskill("k11614"),
       lskill("k11616"),
+      1 == d.skill.k11616.unlock &&
+        0 == d.skill.k11616.value &&
+        (d.skill.k11616.unlock = 0),
       uskill("k1114"),
       show_notice(story.s45, 43)),
     "k11616" == e &&
@@ -4580,7 +4678,10 @@ function up_skill(e) {
       add_story("s49"),
       show_notice(story.s49)),
     "k11617" == e &&
-      (lskill("k11615"), uskill("k1114"), show_notice(story.s45, 43)),
+      (lskill("k11615"),
+      0 == d.skill.k11616.value && lskill("k11616"),
+      uskill("k1114"),
+      show_notice(story.s45, 43)),
     "k11620" == e &&
       d.skill.k11620.value == d.skill.k11620.max &&
       (lskill("k11621"),
@@ -4609,8 +4710,8 @@ function up_skill(e) {
       uskill("k11624"),
       add_story("s50"),
       show_notice(story.s50)),
-    "k11627" == e && (d.skill.a113.ap += 2),
-    "k11628" == e && (d.skill.a115.ap += 3),
+    "k11627" == e && (d.skill.a113.attack += 2),
+    "k11628" == e && (d.skill.a115.attack += 3),
     "k11624" == e &&
       (lskill("k11622"),
       lskill("k11623"),
@@ -4744,6 +4845,7 @@ function up_skill(e) {
       lskill("k11643"),
       lskill("e1117"),
       uskill("k1114"),
+      add_xp(25),
       add_story("s65"),
       show_notice(story.s65, 47)),
     "k11643" == e &&
@@ -4770,6 +4872,7 @@ function up_skill(e) {
       lskill("k11712"),
       lskill("k11713"),
       uskill("k11714"),
+      add_xp(25),
       add_story("s70"),
       show_notice(story.s70, 49)),
     "k11712" == e &&
@@ -4801,6 +4904,11 @@ function up_skill(e) {
       add_story("s74"),
       show_notice(story.s74, 53)),
     "k11718" == e && uskill("e1121"),
+    "k117181" == e &&
+      (d.skill.k11718.value < d.skill.k11718.max &&
+        ((d.skill.k117181.value = 0), (d.skill.k117181.auto = 1)),
+      d.skill.k11718.value++,
+      add_xp(d.skill.e1121.xp)),
     "k11719" == e &&
       (lskill("k11717"),
       lskill("k11719"),
@@ -4919,8 +5027,8 @@ function up_skill(e) {
     "k1193" == e)
   ) {
     lskill("k1194"), save_lastform();
-    for (var _ = Object.keys(d.skill), l = 0; l < _.length; l++)
-      (d.skill[_[l]].unlock = 0), "sp" != _[l] && (d.skill[_[l]].value = 0);
+    for (var t = Object.keys(d.skill), l = 0; l < t.length; l++)
+      (d.skill[t[l]].unlock = 0), "sp" != t[l] && (d.skill[t[l]].value = 0);
     (d.game.ginfo_open = 0),
       (d.game.gtab_open = 0),
       (gebi("gmain").innerHTML = ""),
@@ -4935,7 +5043,8 @@ function up_skill(e) {
     "e" == e.substr(0, 1) && win_fight(e),
     "e111" == e && (d.game.next_stage = 15),
     "e112" == e && (d.game.next_stage = 23),
-    "e113" == e && (d.skill.e113.need += 1),
+    "e113" == e &&
+      ((d.skill.e113.need += 1), d.game.tree.t53 > 0 && uskill("k114011")),
     "e114" == e && (d.game.next_stage = 27),
     "e115" == e && (d.game.next_stage = 28),
     "e116" == e && (lskill("k11418"), add_story("s20"), show_notice(story.s20)),
@@ -4951,6 +5060,7 @@ function up_skill(e) {
         (lskill("k114133"),
         lskill("k114134"),
         lskill("k114135"),
+        lskill("k114136"),
         uskill("k11420"),
         add_story("s27"),
         show_notice(story.s27))),
@@ -4960,6 +5070,7 @@ function up_skill(e) {
       (lskill("k114133"),
       lskill("k114134"),
       lskill("k114135"),
+      lskill("k114136"),
       uskill("k11420"),
       add_story("s27"),
       show_notice(story.s27)),
@@ -4968,16 +5079,20 @@ function up_skill(e) {
       add_story("s32"),
       show_notice(story.s32, 35)),
     "e1111" == e &&
-      (lskill("k115116"),
-      uskill("k11513"),
-      add_story("s34"),
-      show_notice(story.s34)),
+      (uskill("k11513"), add_story("s34"), show_notice(story.s34)),
     "e1112" == e &&
       d.skill.k115271.value == d.skill.k115271.max &&
-      (uskill("k115272"), add_story("s41"), show_notice(story.s41)),
+      (uskill("k115272"),
+      uskill("k115273"),
+      add_story("s41"),
+      show_notice(story.s41)),
     "e1113" == e &&
-      (lskill("k115272"), uskill("k1114"), (d.game.next_stage = 39)),
-    "e1114" == e && (d.skill.e1114.need += 1),
+      (lskill("k115272"),
+      lskill("k115273"),
+      uskill("k1114"),
+      (d.game.next_stage = 39)),
+    "e1114" == e &&
+      (d.game.tree.t53 > 0 && uskill("k116001"), (d.skill.e1114.need += 1)),
     "e1115" == e &&
       (lskill("k11614"),
       lskill("k11615"),
@@ -4997,7 +5112,8 @@ function up_skill(e) {
       lskill("k11642"),
       lskill("k11643"),
       uskill("k1114"),
-      (d.skill.k1114.gain += 10),
+      (d.skill.a111.need -= 0.5),
+      (d.skill.a112.need -= 0.5),
       add_story("s63"),
       show_notice(story.s63, 47)),
     "e1118" == e &&
@@ -5015,7 +5131,8 @@ function up_skill(e) {
       add_story("s72"),
       show_notice(story.s72, 49)),
     "e1121" == e &&
-      (1 == d.skill.k11718.value && uskill("k11725"),
+      (d.game.tree.t53 > 0 && uskill("k117181"),
+      1 == d.skill.k11718.value && uskill("k11725"),
       (d.skill.e1121.need += 1)),
     "e1122" == e &&
       (uskill("k11725"), add_story("s77"), show_notice(story.s77)),
@@ -5069,8 +5186,8 @@ function defeated(e) {
     (d.game.battle = null),
     (gebi("gmain").innerHTML = "");
 }
-function explore_go(e, t, _) {
-  1 == d.skill[_].unlock && ((d.skill[_].curr += t), checkmax_c(_)),
+function explore_go(e, _, t) {
+  1 == d.skill[t].unlock && ((d.skill[t].curr += _), checkmax_c(t)),
     (d.skill[e].value = 0);
 }
 function checkmax_v(e) {
@@ -5080,27 +5197,32 @@ function checkmax_c(e) {
   d.skill[e].curr > d.skill[e].need && (d.skill[e].curr = d.skill[e].need);
 }
 function uskill(e) {
-  var t = d.skill[e];
-  null == t && (t = init_d(1).skill[e]),
-    null == t && alert(e),
-    (t.unlock = 1),
-    null != t.enemy && prep_combat(e);
+  var _ = d.skill[e];
+  null == _ && (_ = init_d(1).skill[e]),
+    null == _ && alert(e),
+    (_.unlock = 1),
+    null != _.enemy && prep_combat(e);
 }
 function lskill(e) {
-  var t = d.skill[e];
-  (t.unlock = 0),
-    (t.running = 0),
-    (t.curr = 0),
-    (t.auto = 0),
+  var _ = d.skill[e];
+  (_.unlock = 0),
+    (_.running = 0),
+    (_.curr = 0),
+    (_.auto = 0),
     null != gebi("gubox-" + e) &&
       ((gebi("gubox-" + e).innerHTML = ""),
       gebi("gmain").removeChild(gebi("gubox-" + e)));
 }
 function prep_combat(e) {
   if (null == d.game.battle) {
-    for (var t = Object.keys(d.skill), _ = 0; _ < t.length; _++)
-      "a" == t[_].substring(0, 1) &&
-        ((d.skill[t[_]].value = 0), (d.skill[t[_]].curr = 0));
+    var _ = Object.keys(d.skill);
+    1 == d.skill.k115.value &&
+      ((d.skill.k110.auto = 1), (d.skill.k110.running = 1)),
+      1 == d.skill.k1224.value &&
+        ((d.skill.k110.auto = 1), (d.skill.k110.running = 1));
+    for (var t = 0; t < _.length; t++)
+      "a" == _[t].substring(0, 1) &&
+        ((d.skill[_[t]].value = 0), (d.skill[_[t]].curr = 0));
     null != d.skill[e].curr2 && (d.skill[e].curr2 = 0),
       (d.skill[e].curr = 0),
       (d.game.battle = e);
@@ -5112,60 +5234,67 @@ function progress_check() {
     (null != d.game.battle
       ? ((e.k1114.running = 0), (e.k1114.auto = 0))
       : d.game.tree.t56 > 0 && ((e.k1114.running = 1), (e.k1114.auto = 1)));
+  var _ = 1;
+  1 == d.skill.k12271.value && (_ += 1),
+    (skill.k1227.text = "Gain sanity (+" + _ + ").");
+  var _ = 3;
+  1 == d.skill.k11191.value && (_ += 3),
+    d.game.tree.t24 > 0 && (_ += d.game.tree.t24),
+    (skill.k1119.text = "Exploration progress (+" + _ + "s).");
 }
 function stage_check() {
   if (1 != d.game.paused) {
     0 != d.game.next_stage &&
       ((d.game.stage = d.game.next_stage), (d.game.next_stage = 0));
     var e = d.game.stage,
-      t = d.skill;
+      _ = d.skill;
     0 == e && (add_story("s0"), show_notice(story.s0, 1)),
-      1 == e && t.k110.value >= 3 && (uskill("k111"), (d.game.next_stage = 2)),
+      1 == e && _.k110.value >= 3 && (uskill("k111"), (d.game.next_stage = 2)),
       2 == e &&
-        t.k110.value >= 5 &&
-        t.k111.value >= 1 &&
+        _.k110.value >= 5 &&
+        _.k111.value >= 1 &&
         (uskill("k112"),
         uskill("k113"),
         uskill("k114"),
         (d.game.next_stage = 3)),
-      3 == e && t.k110.max >= 12 && (uskill("k115"), (d.game.next_stage = 4)),
+      3 == e && _.k110.max >= 12 && (uskill("k115"), (d.game.next_stage = 4)),
       4 == e &&
-        t.k110.max >= 16 &&
-        ((t.k111.unlock = 1),
+        _.k110.max >= 16 &&
+        ((_.k111.unlock = 1),
         (skill.k111.title = "Awareness II"),
-        (t.k111.max = 2),
-        (t.k111.cost = { k110: 18 }),
-        (t.k111.need = 6),
+        (_.k111.max = 2),
+        (_.k111.cost = { k110: 18 }),
+        (_.k111.need = 6),
         (d.game.next_stage = 5),
         (gebi("gmain").innerHTML = "")),
       5 == e &&
-        2 == t.k111.value &&
+        2 == _.k111.value &&
         (uskill("k116"),
         uskill("k117"),
         add_story("s1"),
         show_notice(story.s1, 6)),
       6 == e &&
-        1 == t.k116.value &&
+        1 == _.k116.value &&
         (uskill("k118"), uskill("k119"), (d.game.next_stage = 7)),
       6 == e &&
-        1 == t.k117.value &&
+        1 == _.k117.value &&
         (uskill("k1111"), uskill("k1112"), (d.game.next_stage = 7)),
       7 == e &&
-        t.k118.value > 2 &&
-        t.k119.value > 2 &&
+        _.k118.value > 2 &&
+        _.k119.value > 2 &&
         (uskill("k1110"), add_story("s2a"), show_notice(story.s2a, 8)),
       7 == e &&
-        t.k1111.value > 2 &&
-        t.k1112.value > 2 &&
+        _.k1111.value > 2 &&
+        _.k1112.value > 2 &&
         (uskill("k1113"), add_story("s2b"), show_notice(story.s2b, 8)),
       8 == e &&
-        t.k1114.value > 2 &&
+        _.k1114.value > 2 &&
         (lskill("k1114"),
         uskill("k1115"),
         add_story("s3"),
         show_notice(story.s3, 9)),
       9 == e &&
-        t.k1115.value > 0 &&
+        _.k1115.value > 0 &&
         ((d.game.gtab_open = 1),
         (d.game.tab.open11 = 1),
         (d.game.tab.open12 = 1),
@@ -5175,27 +5304,27 @@ function stage_check() {
         add_story("s4"),
         show_notice(story.s4, 10)),
       10 == e &&
-        t.k120.value > 1 &&
+        _.k120.value > 1 &&
         (uskill("k1114"),
         uskill("k121"),
         uskill("k122"),
         uskill("k123"),
         (d.game.next_stage = 11)),
       11 == e &&
-        t.k1114.value > 6 &&
+        _.k1114.value > 6 &&
         (uskill("k1131"),
         uskill("k1132"),
         add_story("s5"),
         show_notice(story.s5, 12)),
       12 == e &&
-        t.k1114.value > 10 &&
+        _.k1114.value > 10 &&
         (lskill("k1114"),
         uskill("k1133"),
         uskill("k1134"),
         add_story("s6"),
         show_notice(story.s6, 13)),
       13 == e &&
-        t.k1114.value > 14 &&
+        _.k1114.value > 14 &&
         (lskill("k1114"),
         uskill("k1135"),
         add_story("s7"),
@@ -5209,19 +5338,19 @@ function stage_check() {
       17 == e && (uskill("k1138"), add_story("s9"), show_notice(story.s9, 18)),
       18 == e && (uskill("k1114"), (d.game.next_stage = 19)),
       19 == e &&
-        t.k1114.value > 21 &&
+        _.k1114.value > 21 &&
         ((d.skill.k1114.cost = { k120: 5 }),
         lskill("k1114"),
         uskill("k1139"),
         add_story("s10"),
         show_notice(story.s10, 20)),
       20 == e &&
-        t.k1114.value > 32 &&
+        _.k1114.value > 32 &&
         (1 == d.skill.k116.unlock &&
           (uskill("k11311"), add_story("s11"), show_notice(story.s11, 21)),
         (d.game.next_stage = 21)),
       21 == e &&
-        t.k1114.value > 40 &&
+        _.k1114.value > 40 &&
         (lskill("k1114"),
         uskill("k1140"),
         1 == d.skill.k1136.unlock && uskill("a113"),
@@ -5234,7 +5363,7 @@ function stage_check() {
         add_story("s13"),
         show_notice(story.s13, 24)),
       24 == e &&
-        t.k1114.value > 45 &&
+        _.k1114.value > 45 &&
         (lskill("k1114"),
         1 == d.skill.k116.unlock
           ? (uskill("k11410"), add_story("s14a"), show_notice(story.s14a, 26))
@@ -5252,7 +5381,7 @@ function stage_check() {
           ? (uskill("a115"), add_story("s15a"), show_notice(story.s15a, 29))
           : (add_story("s15c"), show_notice(story.s15c, 29))),
       29 == e &&
-        t.k1114.value > 50 &&
+        _.k1114.value > 50 &&
         (lskill("k1114"),
         uskill("k11412"),
         uskill("k11413"),
@@ -5260,7 +5389,7 @@ function stage_check() {
         add_story("s16"),
         show_notice(story.s16, 30)),
       30 == e &&
-        t.k1114.value > 55 &&
+        _.k1114.value > 55 &&
         (lskill("k1114"),
         uskill("k11510"),
         uskill("k11513"),
@@ -5275,16 +5404,19 @@ function stage_check() {
         lskill("k11512"),
         (d.game.next_stage = 33)),
       35 == e &&
-        (uskill("e1111"), add_story("s33"), show_notice(story.s33, 36)),
+        (lskill("k11513"),
+        uskill("e1111"),
+        add_story("s33"),
+        show_notice(story.s33, 36)),
       36 == e &&
-        t.k1114.value > 60 &&
+        _.k1114.value > 60 &&
         (lskill("k1114"),
+        lskill("k11513"),
         uskill("k11520"),
-        uskill("k11521"),
         add_story("s39"),
         show_notice(story.s39, 37)),
       37 == e &&
-        t.k1114.value > 65 &&
+        _.k1114.value > 65 &&
         (lskill("k1114"),
         uskill("k115271"),
         add_story("s40"),
@@ -5292,13 +5424,13 @@ function stage_check() {
       39 == e &&
         (uskill("k1114"), add_story("s42"), show_notice(story.s42, 40)),
       40 == e &&
-        t.k1114.value > 70 &&
+        _.k1114.value > 70 &&
         (uskill("k11600"),
         1 == d.skill.k116.unlock && uskill("k11601"),
         add_story("s43"),
         show_notice(story.s43, 41)),
       41 == e &&
-        t.k1114.value > 75 &&
+        _.k1114.value > 75 &&
         (lskill("k1114"),
         uskill("k11610"),
         uskill("k11611"),
@@ -5308,7 +5440,7 @@ function stage_check() {
         show_notice(story.s44, 42)),
       43 == e && (uskill("k1114"), (d.game.next_stage = 44)),
       44 == e &&
-        t.k1114.value > 80 &&
+        _.k1114.value > 80 &&
         (lskill("k1114"),
         uskill("k11630"),
         uskill("k11631"),
@@ -5320,7 +5452,7 @@ function stage_check() {
         add_story("s56"),
         show_notice(story.s56, 45)),
       45 == e &&
-        t.k1114.value > 85 &&
+        _.k1114.value > 85 &&
         (lskill("k1114"),
         uskill("k11637"),
         1 == d.skill.k116.unlock && uskill("k11638"),
@@ -5328,7 +5460,7 @@ function stage_check() {
         add_story("s58"),
         show_notice(story.s58, 46)),
       46 == e &&
-        t.k1114.value > 90 &&
+        _.k1114.value > 90 &&
         (lskill("k1114"),
         uskill("k11640"),
         uskill("k11643"),
@@ -5337,10 +5469,10 @@ function stage_check() {
         add_story("s62"),
         show_notice(story.s62, 47)),
       47 == e &&
-        t.k1114.value > 95 &&
+        _.k1114.value > 95 &&
         (uskill("k1240"), add_story("s67"), show_notice(story.s67, 48)),
       48 == e &&
-        t.k1114.value >= 100 &&
+        _.k1114.value >= 100 &&
         (uskill("k11710"),
         uskill("k11713"),
         1 == d.skill.k116.unlock && uskill("k11711"),
@@ -5356,7 +5488,7 @@ function stage_check() {
       59 == e && (add_story("s98"), show_notice(story.s98, 60)),
       60 == e && (lose_plane(), (d.game.next_stage = 62)),
       61 == e && (win_plane(), (d.game.next_stage = 63)),
-      t.k1114.value >= 100 &&
+      _.k1114.value >= 100 &&
         (lskill("k1114"),
         lskill("k11381"),
         lskill("k1138"),

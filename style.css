@@ -1,4 +1,4 @@
-html, body {max-width: 100%; overflow-x: hidden;}
+html, body {max-width: 100%; /*overflow-x: hidden;*/}
 body {padding:0; background-color:black; color:white; text-align:center; font-family:Arial; font-size:16px;}
 div.gframe {width:100%; max-width:600px; margin:auto; border:0px solid red;}
 
@@ -30,7 +30,7 @@ div.gntext {color:#ccc; line-height:150%; overflow-y:auto !important;}
 img.visual {width:100%;}
 input.gbtn {margin-top:20px; padding:10px 20px 10px; cursor:pointer; color:white; background-color:black; border:1px solid white;}
 
-div.ginfo {width:auto; border:1px solid #666; margin:3px; margin-bottom:10px; font-size:75%;}
+div.ginfo {width:auto; border:1px solid #666; margin:3px; margin-bottom:10px; font-size:75%; background-color:black; z-index:1;}
 div.ginfbar {border:0px solid #fff; color:#ccc; border:1px solid #000; padding:1px; position:relative;}
 div.gsbox {border:0px solid red; display: inline-block; margin:	2px 10px 2px 10px;}
 div.gmenu {border:1px solid #666; margin:3px; display: inline-block; margin-top:5px; margin-bottom:10px; cursor:pointer;}
