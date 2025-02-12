@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" onclick="first_tap();">
 <head>
-	<title>Midnight Idle - Minimalist Incremental Game - v0.2.9</title>
+	<title>Midnight Idle - Minimalist Incremental Adventure Game - v0.3.8</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
-	<meta name="description" content="Midnight Idle, a Minimalist Incremental Game">
-	<meta name="author" content="Wong Yat Seng">
-	<link rel="stylesheet" href="style.css?v=0232">
-	<script src="config.js?v=0293"></script>
-	<script src="script.js?v=0292"></script>
+	<meta name="description" content="Midnight Idle, a Minimalist Incremental Adventure Game">
+	<meta name="author" content="Wong Yat Seng (AccurateCat83)">
+	<link rel="stylesheet" href="style.css?v=0381">
+	<link rel="icon" type="image/png" href="img/favicon.png" />
+	<script src="storyx.js?v=0380"></script>
+	<script src="treesp.js?v=0380"></script>
+	<script src="skillx.js?v=0380"></script>
+	<script src="config.js?v=0380"></script>
+	<script src="script.js?v=0381"></script>
+	<script src="verlog.js?v=0380"></script>
+	<script src="jquery-3.7.1.min.js"></script>
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNHS9PQ2XZ"></script>
 <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-WNHS9PQ2XZ'); </script> -->
 </head>
-<body>
+<body onkeydown="bkey(event)">
 	<script src="chs.js"></script>
 	<script src="core.js"></script>
 <div class="gframe">
+<div class="gpause" id="gpause" onclick="toggle_pause();" style="display:none;"><div>PAUSED<br><span class="ptext">Tap or [Space] to pause/unpause</span></div></div>
+	<div class="splash" id="splash"><div class="splashtxt"><img src="img/logo.png"><br>v0.3.8</div></div>
+	<div id="header" style="display:none;">
+		<img class="icox" src="img/ico-p1.png" id="ipause" onclick="toggle_pause();" title="Pause/Unpause (Space)">
+		<img class="icox" src="img/ico-v1.png" id="imute" onclick="toggle_volume();" title="Mute/Unmute (M)">
+		<img class="icox" src="img/ico-a.png" id="iclog" onclick="load_attacks(); window.scrollTo(0,0); show('gmisc5'); show('gnoverlay'); gebi('gnpanel-attack').scrollIntoView(true); d.game.paused=1;" title="Attacks/Combat Log (K)">
+		<img class="icox" src="img/ico-z.png" id="islog" onclick="load_story(); window.scrollTo(0,0); show('gmisc3'); show('gnoverlay'); gebi('gnpanel-story').scrollIntoView(false); d.game.paused=1;" title="Story Log (L)">
+		<img class="icox" src="img/ico-w.png" id="idlog" onclick="load_log(); window.scrollTo(0,0); show('gmisc4'); show('gnoverlay'); gebi('gnpanel-log').scrollIntoView(true); d.game.paused=1;" title="Developer Log (D)">
+		<img class="icox" src="img/ico-x2.png" id="isett" onclick="show('gmisc2'); window.scrollTo(0,0); show('gnoverlay'); d.game.paused=1;" title="Settings (S)">
+		<img class="icox" src="img/ico-y.png" id="ilove" onclick="show('gmisc'); window.scrollTo(0,0); show('gnoverlay'); d.game.paused=1;" title="About (A)">
+		<input type="text" id="key" class="key" onkeyup="keyin();">
+	</div>
 	<div id="ginfo" class="ginfo p5" style="display:none; position:sticky; position:-webkit-sticky; top:0;"></div>
 	<div id="gworld" style="display:none;"></div>
+	<div id="gbat" style="display:none; padding:10px;">
+		<input id="btnanc" type="button" class="gbtn" value="祖先的足迹- 激活 -点击金庸" style="margin-top:0px; border:1px solid #ff0;" onclick="anctrack=0; hide2('gbat');">
+		<br><span id="lastact"></span><span id="lastroom"></span>
+	</div>
+	<span id="spntmp"></span>
 	<div id="gtab" style="display:none;"></div>
-	<div id="gbat" style="display:none;"></div>
 	<div id="gmain" class="gmain"></div>
 	<div id="gnotice" class="gnotice" style="display:none;">
-		<div class="gnpanel">
+		<div class="gnoticebar"><span class="gnoticex" onclick="close_notice();">X</span></div>
+		<div class="gnpanel" style="margin-top:0;">
 			<div id="gntitle" class="gntitle"></div>
 			<div id="gntext" class="gntext"></div>
 			<br><img id="visual" class="visual" src="">
-			<br><input type="button" id="gnbtn" class="gbtn" value="关闭" onclick="close_notice();">
+			<br><input type="button" id="gnbtn" class="gbtn" value="关闭" onclick="close_notice();"><br><br><div class="bclose">[C] to Continue</div>
 			<br>&nbsp;
 		</div>
 	</div>
@@ -35,36 +58,48 @@
 		<div class="gnpanel" style="margin-top:5%;">
 			<div class="gntitle">Midnight Idle</div>
 			<div class="gntext">
+			<div style="color:#d88080; font-size:80%;">&#127881;&#127881; Winner of <a class="red" style="text-decoration:none;" href="https://www.reddit.com/r/incremental_games/comments/1hv0x56/best_of_2024_results/" target="_blank">Reddit</a> best Web Incremental Game 2024 &#127881;&#127881;</div>
+				<br>
 				A minimalist incremental game with a captivating backstory, offering rich layers of experience for you to explore on your adventure. I created this game out of my passion for the genre, inspired by titles like Armory & Machine, Antimatter Dimensions, A Dark Room, Universal Paperclips, and many others.
 				<br><br>If you’ve enjoyed the game and want to support its continued development—and future projects—please consider buying me a coffee. Your support makes all the difference!
 				<br><br><a href="https://buymeacoffee.com/yatseng" target="_blank"><img src="img/coffee.png"></a>
-				<br><br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc'); hide('gnoverlay');">
+				<br><br><input type="button" id="gnbtn1" class="gbtn" value="关闭" onclick="hide('gmisc'); hide('gnoverlay'); d.game.paused=0;"><br><br><div class="bclose">[C] to Continue</div>
 			</div>
 		</div>
 	</div>
 	<div id="gmisc2" class="gnotice" style="display:none;">
 		<div class="gnpanel" style="margin-top:5%;">
-			<div class="gntitle">Game Stats</div>
+			<div class="gntitle">Game Data</div>
 			<div class="gntext">
 				Game Time: <span id="tick">0</span>
 				<br>Current Stage: <span id="stage">0</span>
+				<br>Last Room: <span id="lrm"></span>
+				<br>Game Speed: <span id="gspeed"></span>x
 				<br><br>Volume:
 				<br><input id="svolume" type="range" min="0" max="100" value="75" oninput="do_volume(this.value);">
-				<br><br>Game data:
+				<br><br><label class="hand"><input id="noimg" type="checkbox" onclick="togart();"> Disable story art</label>
+				<br><br>Cloud save:
+				<input type="button"class="gbtn" value="备份" onclick="cloudsave();">
+				<input type="button"class="gbtn" value="恢复" onclick="cloudload();">
+				<br>Game data:
 				<input type="button"class="gbtn" value="导出" onclick="exportgame();">
 				<input type="button"class="gbtn" value="导入" onclick="importgame();">
 				<br><label class="hand smaller"><input id="impclip" type="checkbox"> Import from clipboard (mobile phones)</label>
-				<br><label class="hand smaller"><input id="exptxt" type="checkbox"> Export to textarea.</label><br><textarea id="txta" style="display:none;" rows="3" cols="20"></textarea>
+				<br><label class="hand smaller"><input id="imptxt" type="checkbox" onclick="show('txta');"> Import from text box</label>
+				<br><label class="hand smaller"><input id="exptxt" type="checkbox"> Export to text box.</label><br><textarea id="txta" style="display:none;" rows="3" cols="20"></textarea>
 				<br><span id="imexinfo" style="color:#cfc"></span>
 				<br><input type="button" class="gbtn" value="重置游戏" onclick="if (confirm('This will permanently reset your game progress. Confirm?')){resetgame();hide('gmisc2');}" style="background-color:darkred;">
-				<div id="divcycle" style="display:none"><input type="button" class="gbtn" value="Reset Cycle" onclick="if (confirm('This will reset your game progress, but keep SP and unlocked prestige rewards. Confirm?')){resetcycle();hide('gmisc2');}" style="background-color:darkblue;">
-					<br><br>Stuck?<br>You can reset your current cycle progress only.<br>Please report/feedback your bug: <a href="https://www.reddit.com/r/incremental_games/comments/1hanng2/requesting_for_feedback_midnight_idle_020_with/" target="_blank" style="color:Red;">Reddit</a>
+				<div id="divcycle" style="display:none"><input type="button" class="gbtn" value="重置本轮游戏" onclick="if (confirm('This will reset your game progress, but keep SP and unlocked prestige rewards. Confirm?')){resetcycle();hide('gmisc2');}" style="background-color:darkblue;">
+					<br><br>Stuck?<br>You can reset your current cycle progress (not whole game).<br>Please report bug/feedback/suggestions at: <a href="https://www.reddit.com/r/incremental_games/comments/1ifp86x/midnight_idle_v03x_jezebel_chapter/" target="_blank" style="color:Red;">Reddit</a>
 				</div>
-				<br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc2'); hide('gnoverlay'); gebi('imexinfo').innerHTML=''; hide('txta'); gebi('txta').innerHTML=''; ">
+				<br><input type="button"class="gbtn" id="gnbtn2" value="关闭" onclick="hide('gmisc2'); hide('gnoverlay'); gebi('imexinfo').innerHTML=''; hide('txta'); gebi('txta').innerHTML=''; d.game.paused=0; "><br><br><div class="bclose">[C] to Continue</div>
+				<div class="smaller">
 				<br><br>Credits:
 				<br>Music: <a style="color:#c66;" href="https://pixabay.com/">pixabay.com</a>
 				<br>Icons: <a style="color:#c66;" href="https://uxwing.com/" target="_blank">uxwing.com</a>
 				<br>Images: <a style="color:#c66;" href="https://www.bing.com/images/create/" target="_blank">Bing Image Creator</a>
+				<br>Font: <a style="color:#c66;" href="https://font.download/">font.download</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -72,19 +107,38 @@
 		<div class="gnpanel" id="gnpanel-story" style="margin-top:5%;">
 			<div class="gntitle">Story</div>
 			<div class="gntext" id="gntext-story">
-				<br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc3'); hide('gnoverlay');"><br><br>
+				<br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc3'); hide('gnoverlay'); d.game.paused=0;"><br><br>
 				<span id="gnstory">.. No Story ..</span>
-				<br><input type="button" class="gbtn" value="关闭" onclick="hide('gmisc3'); hide('gnoverlay');">
+				<br><input type="button" id="gnbtn3" class="gbtn" value="关闭" onclick="hide('gmisc3'); hide('gnoverlay'); d.game.paused=0;"><br><br><div class="bclose">[C] to Continue</div>
 			</div>
 		</div>
 	</div>
-	<br><br>
+	<div id="gmisc4" class="gnotice" style="display:none;">
+		<div class="gnpanel" id="gnpanel-log" style="margin-top:5%;">
+			<div class="gntitle">Change Log</div>
+			<div class="gntext" id="gntext-story">
+				<br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc4'); hide('gnoverlay'); d.game.paused=0;"><br><br>
+				<div id="gnlog" class="smaller l"></div>
+				<br><input type="button" id="gnbtn4" class="gbtn" value="关闭" onclick="hide('gmisc4'); hide('gnoverlay'); d.game.paused=0;"><br><br><div class="bclose">[C] to Continue</div>
+			</div>
+		</div>
+	</div>
+	<div id="gmisc5" class="gnotice" style="display:none;">
+		<div class="gnpanel" id="gnpanel-attack" style="margin-top:5%;">
+			<div class="gntitle">Combat Result/Attacks</div>
+			<div class="gntext" id="gntext-attack">
+				<br><input type="button"class="gbtn" value="关闭" onclick="hide('gmisc5'); hide('gnoverlay'); d.game.paused=0;"><br><br>
+				<span class="red">Last Combat Result</span><br>
+				<div id="divclog"></div>
+				<br>
+				<span class="red">Unlocked Attacks</span><br><div id="gnatk" class="smaller l"></div>
+				<br><input type="button" id="gnbtn5" class="gbtn" value="关闭" onclick="hide('gmisc5'); hide('gnoverlay'); d.game.paused=0;"><br><br><div class="bclose">[C] to Continue</div>
+			</div>
+		</div>
+	</div>
+	<br>
 	<div id="footer" style="display:none;">
-		<img class="icox" src="img/ico-y.png" onclick="show('gmisc'); window.scrollTo(0,0); show('gnoverlay');">
-		<img class="icox" src="img/ico-x2.png" onclick="show('gmisc2'); window.scrollTo(0,0); show('gnoverlay');">
-		<img class="icox" src="img/ico-z.png" onclick="load_story(); window.scrollTo(0,0); show('gmisc3'); show('gnoverlay'); gebi('gnpanel-story').scrollIntoView(false);">
-		<img id="imute" class="icox" src="img/ico-v1.png" onclick="toggle_volume();">
-		<br><br><span class="noselect" style="color:#666; font-size:70%;">Midnight Idle v0.2.9 - by <a style="color:#666; text-decoration:none;" href="https://yatseng.com" target="_blank">Wong Yat Seng</a></span>
+		<span class="noselect" style="color:#666; font-size:70%;">Midnight Idle v0.3.8 - by <a style="color:#666; text-decoration:none;" href="https://yatseng.com" target="_blank">Wong Yat Seng (AccurateCat83)</a></span>
 	</div>
 </div>
 <br>

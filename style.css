@@ -1,10 +1,17 @@
 html, body {max-width: 100%; /*overflow-x: hidden;*/}
 body {padding:0; background-color:black; color:white; text-align:center; font-family:Arial; font-size:16px;}
 div.gframe {width:100%; max-width:600px; margin:auto; border:0px solid red;}
+div.splash {position:fixed; width:100%; max-width:600px; height:100%; border:0px solid red; background-color:white; top:0; z-index:1000; display:table-cell; text-align:center; vertical-align:middle; transition: background 1s linear; -webkit-transition: background 1s linear; -moz-transition: background 1s linear;}
+div.splashtxt {position:absolute; top:35%; border:0px solid blue; width:100%;}
+div.splashtxt img {width:60%;}
+div.gpause {position:fixed; width:100%; max-width:600px; height:100%; border:0px solid red; background-color:rgba(0,0,0,0.2); top:0; z-index:1001; display:table-cell; text-align:center; vertical-align:middle; cursor:pointer;}
+div.gpause div {position:absolute; top:35%; border:0px solid blue; width:100%;font-size:300%;color:white;}
+div.gpause div .ptext {font-size:40% !important;color:white;}
 
 .noselect {-webkit-user-select:none; -ms-user-select:none; user-select:none;}
 .hand {cursor:pointer;}
 
+div.p7 {padding:7px;}
 div.p5 {padding:5px;}
 div.p10 {padding:10px;}
 div.center {text-align:center !important;}
@@ -14,8 +21,11 @@ div.center {text-align:center !important;}
 .clr-k11a {color:#e33 !important;}		.clr-k11b {color:#b33 !important;}		.clr-k11c {background-color:#e33 !important;}	.clr-k11d {background-color:#600 !important;}
 .clr-k12a {color:#39f !important;}		.clr-k12b {color:#33b !important;}		.clr-k12c {background-color:#39f !important;}	.clr-k12d {background-color:#006 !important;}
 .clr-k15a {color:#008C00 !important;}	.clr-k15b {color:#2F005E !important;}													.clr-k15d {background-color:#004000 !important;}
-
+.clr-k16a {color:#AB4FFF !important;}	.clr-k16b {color:#2F005E !important;}													.clr-k16d {background-color:#46008C !important;}
+.clr-sta {color:#AB4FFF !important;}
+																				.clr-eatkc {background-color:#fff !important;}.clr-eatkd {background-color:#313140 !important;}
 .clr-xp {background-color:#5d5d07 !important;}
+.clr-st {background-color:#46008C !important;} .clr-stb{color:#5f04b7 !important;}
 /*
 .clr-k12 {color:#99f !important;}	.bgclr-k12 {background-color:#33f !important;}
 .clr-k13 {color:#0c0 !important;}	.bgclr-k13 {background-color:#090 !important;}
@@ -24,48 +34,63 @@ div.center {text-align:center !important;}
 */
 div.gnoverlay {position:fixed; top:0; left:0; width:100%; height:100%; z-index:1; background-color:black; opacity:0.9;}
 div.gnotice {width:100%; max-width:600px; margin:auto; border:0px solid red; background-color:#000; height:100%; z-index:2; top:0; bottom:0; position:absolute;}
+div.gnoticebar {text-align:right; padding-top:10px;}
+span.gnoticex {padding-top:10px; max-width:5%; text-align:center; cursor:pointer; font-size:150%; padding:3%;}
 div.gnpanel {margin-top:10%; padding:20px;}
 div.gntitle {color:red; padding-bottom:10px; font-size:150%;}
 div.gntext {color:#ccc; line-height:150%; overflow-y:auto !important;}
 img.visual {width:100%;}
 input.gbtn {margin-top:20px; padding:10px 20px 10px; cursor:pointer; color:white; background-color:black; border:1px solid white;}
 
-div.ginfo {width:auto; border:1px solid #666; margin:3px; margin-bottom:10px; font-size:75%; background-color:black; z-index:1;}
-div.ginfbar {border:0px solid #fff; color:#ccc; border:1px solid #000; padding:1px; position:relative;}
+div.ginfo {width:auto; /*border:1px solid #666;*/ margin:3px; margin-bottom:10px; padding-bottom:12px; font-size:75%; background-color:rgba(0,0,0,0.7); z-index:1;}
+div.ginfbar {border:0px solid #fff; color:#ccc; /*border:1px solid #000;*/ margin-top:5px; padding:2px; position:relative;}
 div.gsbox {border:0px solid red; display: inline-block; margin:	2px 10px 2px 10px;}
-div.gmenu {border:1px solid #666; margin:3px; display: inline-block; margin-top:5px; margin-bottom:10px; cursor:pointer;}
-div.gmenu.stab {padding:10px 20px 10px 20px !important;}
-div.gmenu.active {border:1px solid white;}
+div.gmenu {border:1px solid #666; margin:3px; display: inline-block; margin-top:1px; margin-bottom:15px; cursor:pointer; border-radius:10px;}
+div.gmenu.stab {padding:10px 20px 10px 20px !important; border-radius:0;}
+div.gmenu.active {/*border:1px solid #c2c2c2;*/}
 div.gmenu.stactive {border:1px solid white; background-color:#004000 !important;}
+div.gmenu.wpactive {border:1px solid white; background-color:#46008C !important;}
+div.gmenu img {width:40px !important;}
+div.tabval {position:absolute;border:0px solid red; margin-top:-10px; font-size:70%;}
+div.tabkey {position:absolute;border:0px solid red; margin-top:-50px; font-size:70%;}
 div.gmain {border:0px solid #666; margin:3px; width:auto; position:relative;}
 
-div.gubox {}
-div.gupanel {border:1px solid #333; margin-bottom:15px; position:relative;}
-div.gupanel.afford {border:1px solid #fff !important;}
+div.gubox {position:relative; border-bottom-left-radius:10px; border-bottom-right-radius:10px;}
+div .gubox.guk11 {box-shadow: inset -74px -75px 109px -85px #540506; }
+div .gubox.guk12 {box-shadow: inset -74px -75px 109px -85px #070554; }
+div.gupanel {border:1px solid #333; margin-bottom:15px; position:relative; border-bottom-left-radius:10px; border-bottom-right-radius:10px;}
+div.gupanel.afford {border:1px solid #999999 !important;}
 /*div.gupanel.affordx {border:1px solid #f1cc81 !important;}*/
 
 div.gubar {height:4px; width:100%; background-color:#333;}
-div.gubgbar {position:absolute; height:100%; z-index:-1;}
+div.gubartxt {margin-top:3px;}
+div.gubgbar {position:absolute; height:100%; z-index:-1; border-bottom-left-radius:10px; border-bottom-right-radius:10px;}
+div.ginfbar .gubgbar {border-radius:10px;}
 div.gubgbar.enemy {background-color:black !important;}
 div.gubgbar.room {background-color:#330 !important;}
+div.gubgbar.drain {background-color:#4f029c69 !important;}
 div.guxp {height:100%; width:0; background-color:#ccc;}
 div.guxp.enemy {background-color:#000 !important;}
 div.guxp.room {background-color:#cc0 !important;}
+div.guxp.drain {background-color:#69008C !important;}
 div.gubar.enemy {background-color:#f00;}
 div.guxp.timer {background-color:#000 !important; margin-bottom:4px;}
 div.gubar.timer {background-color:#cc0; margin-bottom:4px;}
 div.gutype {font-size:100%; color:#fff;}
 div.gutitle {color:white; text-align:left;}
 span.guauto {color:#fff; font-size:80%;}
-div.gubox.maxed .gutitle {color:#333 !important; font-size:80%;}
+div.gubox.maxed .gutitle {color:#575757 !important; font-size:80%;}
 div.gubox.maxed .gupanel {border:1px solid #222 !important;}
 div.gubox.maxed .gutext {font-size:70%;}
 div.gubox.maxed .gucbar {display:none;}
 div.gubox.gold .gupanel {border:2px solid #ff0 !important;}
 div.gubox.gold .gutitle {color:#990 !important;}
+div.gubox.gold .gutitle.drain {color:#ab4fff !important;}
 div.gubox.room .gupanel {border:2px solid #960 !important;}
 div.gubox.room .gupanel.affordx {border:2px solid #f1cc81 !important;}
+div.gubox.room .gupanel.drain {border:3px solid #46008C !important;}
 div.gubox.enemy .gupanel {border:4px solid #900 !important; padding:20px;;}
+
 
 div.gubox.enemy .gutitle {color:white !important; text-align:left;}
 div.gulvls {float:right; font-size:76%;}
@@ -75,21 +100,45 @@ div.gulvls.gudice.atkmiss {color:#c00;}
 div.gulvls.gudice img {max-width:20px;}
 div.gutext {color:#afafaf; text-align:left; line-height:100%; font-size:80%; padding-top:0px;}
 div.gutext.maxed {color:#666;}
-div.gucbar {text-align:left;}
+div.gucbar {text-align:left; padding-top:2px !important;}
 div.gucbar img {width:16px; height:16px;}
 div.guenemy img {width:30px; height:30px; float:left; padding:10px;}
 span.gutime {color:#fff; text-align:left; font-size:70%;}
 span.gucost {color:#fff; text-align:left; font-size:70%;}
+span.gumem {color:#ee0; text-align:left; font-size:70%;}
 img.icox {bottom:0; right:0; cursor:pointer; margin:5px; width:20px; height:20px;}
+
+table.tabatk {border-collapse:collapse; border:1px solid #ccc; width:100%;}
+table.tabatk th,td  {border:1px solid #ccc;}
+table.tabatk tr th {font-weight:bold; text-align:center; padding:5px; vertical-align:top; background-color:#333;}
+table.tabatk tr td {text-align:center; padding:5px; vertical-align:top;}
+table.tabatk tr td a {color:yellow; text-decoration:none; cursor:pointer;}
+.multa {color:yellow !important; font-weight:bold !important; font-size:180%; cursor:pointer;}
+.multb {color:#ccc !important; font-size:130%; cursor:pointer;}
+.cabi {color:fuchsia !important;}
+.caba {color:orange !important;}
 
 div.bhide {display:none !important;}
 span.bonus {color:#3c3;}
 .bigger {font-size:150%;}
+.small {font-size:85%;}
 .smaller {font-size:80%;}
 .red {color:red !important;}
+.white {color:white !important;}
+.yellow {color:yellow !important;}
 .b {font-weight:bold;}
+.l {text-align:left !important;}
+.m {text-align:center !important;}
+.r {text-align:right !important;}
 .ttt {color: #73FF73 !important; font-weight:bold;}
+.tttw {color: #AB4FFF !important; font-weight:bold;}
 .ttlvl {float:right; font-size:120%;}
 .tttcost {font-size:80% !important; color:#008C00 !important; font-weight:bold;}
+.tttcostw {font-size:80% !important; color:#AB4FFF !important; font-weight:bold;}
 .w20 {width:20px !important; height:20px !important;}
 .ttbuy {position:absolute; top:0; width:100%; height:100%; border:1px solid white; margin:0px; margin-left:-10px; padding:0px; background-color:#000; opacity:0.8}
+input.txtcscode {background-color:black;color:white;font-size:180%;text-align:center;border:1px solid black;letter-spacing:5px; width:80%;}
+input.txtcscode:focus {outline:none;border:none;}
+.key {height:1px; width:1px; font-size:50%; border:0; background-color:black; color:black;}
+input.key:focus {outline:none;border:none;}
+.bclose {font-size:80%; color:#999;};
