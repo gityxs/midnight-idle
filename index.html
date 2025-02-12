@@ -25,13 +25,13 @@
 <div class="gpause" id="gpause" onclick="toggle_pause();" style="display:none;"><div>PAUSED<br><span class="ptext">Tap or [Space] to pause/unpause</span></div></div>
 	<div class="splash" id="splash"><div class="splashtxt"><img src="img/logo.png"><br>v0.3.8</div></div>
 	<div id="header" style="display:none;">
-		<img class="icox" src="img/ico-p1.png" id="ipause" onclick="toggle_pause();" title="Pause/Unpause (Space)">
-		<img class="icox" src="img/ico-v1.png" id="imute" onclick="toggle_volume();" title="Mute/Unmute (M)">
-		<img class="icox" src="img/ico-a.png" id="iclog" onclick="load_attacks(); window.scrollTo(0,0); show('gmisc5'); show('gnoverlay'); gebi('gnpanel-attack').scrollIntoView(true); d.game.paused=1;" title="Attacks/Combat Log (K)">
-		<img class="icox" src="img/ico-z.png" id="islog" onclick="load_story(); window.scrollTo(0,0); show('gmisc3'); show('gnoverlay'); gebi('gnpanel-story').scrollIntoView(false); d.game.paused=1;" title="Story Log (L)">
-		<img class="icox" src="img/ico-w.png" id="idlog" onclick="load_log(); window.scrollTo(0,0); show('gmisc4'); show('gnoverlay'); gebi('gnpanel-log').scrollIntoView(true); d.game.paused=1;" title="Developer Log (D)">
-		<img class="icox" src="img/ico-x2.png" id="isett" onclick="show('gmisc2'); window.scrollTo(0,0); show('gnoverlay'); d.game.paused=1;" title="Settings (S)">
-		<img class="icox" src="img/ico-y.png" id="ilove" onclick="show('gmisc'); window.scrollTo(0,0); show('gnoverlay'); d.game.paused=1;" title="About (A)">
+		<img class="icox" src="img/ico-p1.png" id="ipause" onclick="toggle_pause();" title="暂停/恢复 (Space)">
+		<img class="icox" src="img/ico-v1.png" id="imute" onclick="toggle_volume();" title="静音/取消静音 (M)">
+		<img class="icox" src="img/ico-a.png" id="iclog" onclick="load_attacks(); window.scrollTo(0,0); show('gmisc5'); show('gnoverlay'); gebi('gnpanel-attack').scrollIntoView(true); d.game.paused=1;" title="攻击/战斗 日志 (K)">
+		<img class="icox" src="img/ico-z.png" id="islog" onclick="load_story(); window.scrollTo(0,0); show('gmisc3'); show('gnoverlay'); gebi('gnpanel-story').scrollIntoView(false); d.game.paused=1;" title="故事日志 (L)">
+		<img class="icox" src="img/ico-w.png" id="idlog" onclick="load_log(); window.scrollTo(0,0); show('gmisc4'); show('gnoverlay'); gebi('gnpanel-log').scrollIntoView(true); d.game.paused=1;" title="开发者日志 (D)">
+		<img class="icox" src="img/ico-x2.png" id="isett" onclick="show('gmisc2'); window.scrollTo(0,0); show('gnoverlay'); d.game.paused=1;" title="设置 (S)">
+		<img class="icox" src="img/ico-y.png" id="ilove" onclick="show('gmisc'); window.scrollTo(0,0); show('gnoverlay'); d.game.paused=1;" title="关于 (A)">
 		<input type="text" id="key" class="key" onkeyup="keyin();">
 	</div>
 	<div id="ginfo" class="ginfo p5" style="display:none; position:sticky; position:-webkit-sticky; top:0;"></div>
