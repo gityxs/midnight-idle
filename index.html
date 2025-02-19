@@ -2,13 +2,22 @@
 <html lang="en" onclick="first_tap();">
 <head>
 	<title>Midnight Idle - Minimalist Incremental Adventure Game - v0.3.8</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
-	<meta name="description" content="Midnight Idle, a Minimalist Incremental Adventure Game">
-	<meta name="author" content="Wong Yat Seng (AccurateCat83)">
+	<meta name="description" content="Midnight Idle, a Minimalist Incremental Adventure Game, Winner of Reddit's Incremental Best Web Game of 2024">
+	<meta name="author" content="AccurateCat83">
+	<meta name="keywords" content="incremental, idle, adventure, single player, free, fantasy, rpg, choose your own adventure">
+	<meta property="og:url" content="https://yatseng.com/midnight-idle/v3/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Midnight Idle - Minimalist Incremental Adventure Game" />
+	<meta property="og:description" content="Midnight Idle, a Minimalist Incremental Adventure Game, Winner of Reddit's Incremental Best Web Game of 2024" />
+	<meta property="og:image" content="https://yatseng.com/midnight-idle/cover.jpg" />
+	<meta property="og:locale" content="en_US" />	
 	<link rel="stylesheet" href="style.css?v=0381">
 	<link rel="icon" type="image/png" href="img/favicon.png" />
-	<script src="storyx.js?v=0380"></script>
+	<script src="storyx.js?v=0381"></script>
 	<script src="treesp.js?v=0380"></script>
 	<script src="skillx.js?v=0380"></script>
 	<script src="config.js?v=0380"></script>
@@ -21,15 +30,16 @@
 <body onkeydown="bkey(event)">
 	<script src="chs.js"></script>
 	<script src="core.js"></script>
+
 <div class="gframe">
 <div class="gpause" id="gpause" onclick="toggle_pause();" style="display:none;"><div>PAUSED<br><span class="ptext">Tap or [Space] to pause/unpause</span></div></div>
 	<div class="splash" id="splash"><div class="splashtxt"><img src="img/logo.png"><br>v0.3.8</div></div>
 	<div id="header" style="display:none;">
-		<img class="icox" src="img/ico-p1.png" id="ipause" onclick="toggle_pause();" title="暂停/恢复 (Space)">
+		<img class="icox" src="img/ico-p1.png" id="ipause" onclick="toggle_pause();" title="暂停/恢复 (空格键)">
 		<img class="icox" src="img/ico-v1.png" id="imute" onclick="toggle_volume();" title="静音/取消静音 (M)">
 		<img class="icox" src="img/ico-a.png" id="iclog" onclick="load_attacks(); window.scrollTo(0,0); show('gmisc5'); show('gnoverlay'); gebi('gnpanel-attack').scrollIntoView(true); d.game.paused=1;" title="攻击/战斗 日志 (K)">
-		<img class="icox" src="img/ico-z.png" id="islog" onclick="load_story(); window.scrollTo(0,0); show('gmisc3'); show('gnoverlay'); gebi('gnpanel-story').scrollIntoView(false); d.game.paused=1;" title="故事日志 (L)">
-		<img class="icox" src="img/ico-w.png" id="idlog" onclick="load_log(); window.scrollTo(0,0); show('gmisc4'); show('gnoverlay'); gebi('gnpanel-log').scrollIntoView(true); d.game.paused=1;" title="开发者日志 (D)">
+		<img class="icox" src="img/ico-z.png" id="islog" onclick="load_story(); window.scrollTo(0,0); show('gmisc3'); show('gnoverlay'); gebi('gnpanel-story').scrollIntoView(false); d.game.paused=1;" title="剧情 (L)">
+		<img class="icox" src="img/ico-w.png" id="idlog" onclick="load_log(); window.scrollTo(0,0); show('gmisc4'); show('gnoverlay'); gebi('gnpanel-log').scrollIntoView(true); d.game.paused=1;" title="更新日志 (D)">
 		<img class="icox" src="img/ico-x2.png" id="isett" onclick="show('gmisc2'); window.scrollTo(0,0); show('gnoverlay'); d.game.paused=1;" title="设置 (S)">
 		<img class="icox" src="img/ico-y.png" id="ilove" onclick="show('gmisc'); window.scrollTo(0,0); show('gnoverlay'); d.game.paused=1;" title="关于 (A)">
 		<input type="text" id="key" class="key" onkeyup="keyin();">
@@ -37,7 +47,7 @@
 	<div id="ginfo" class="ginfo p5" style="display:none; position:sticky; position:-webkit-sticky; top:0;"></div>
 	<div id="gworld" style="display:none;"></div>
 	<div id="gbat" style="display:none; padding:10px;">
-		<input id="btnanc" type="button" class="gbtn" value="祖先的足迹- 激活 -点击金庸" style="margin-top:0px; border:1px solid #ff0;" onclick="anctrack=0; hide2('gbat');">
+		<input id="btnanc" type="button" class="gbtn" value="祖先的足迹 - 活跃 - 点击以禁用" style="margin-top:0px; border:1px solid #ff0;" onclick="anctrack=0; hide2('gbat');">
 		<br><span id="lastact"></span><span id="lastroom"></span>
 	</div>
 	<span id="spntmp"></span>
@@ -138,7 +148,8 @@
 	</div>
 	<br>
 	<div id="footer" style="display:none;">
-		<span class="noselect" style="color:#666; font-size:70%;">Midnight Idle v0.3.8 - by <a style="color:#666; text-decoration:none;" href="https://yatseng.com" target="_blank">Wong Yat Seng (AccurateCat83)</a></span>
+		<span class="noselect" style="color:#666; font-size:70%;">Midnight Idle v0.3.8 - by <a style="color:#666; text-decoration:none;" href="https://yatseng.com" target="_blank">Yat Seng (AccurateCat83)</a></span>
+		<!--http://plaza.dsolver.ca/m/AccurateCat83-->
 	</div>
 </div>
 <br>
@@ -160,5 +171,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>    </div>
+
 </body>
 </html>
